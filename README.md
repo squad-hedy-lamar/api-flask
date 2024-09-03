@@ -83,7 +83,7 @@ python -m venv .venv
 source .venv/bin/activate
 
 # Instale as dependências
-# todas as bibliotecas utilizadas nesse projeto estão nesse arquivo
+# como boa prática criamos o requirements.txt que contém todas as todas as bibliotecas utilizadas
 pip install -r requirements.txt
 
 # Rodando o projeto
