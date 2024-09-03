@@ -5,3 +5,14 @@ from utils.config import api_url
 API_URL = api_url()
 
 # Desenvovler os métodos a partir daqui
+
+@app.route("/characters")
+def get_characters():
+  # fazer aqui a chama da API
+  return render_template('/characters/list.html', data={})
+
+
+@app.route("/characters/<id>")
+def get_character(id):
+  # fazer aqui a chama da API
+  return render_template('/characters/details.html', data={})
