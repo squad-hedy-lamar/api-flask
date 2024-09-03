@@ -11,7 +11,7 @@
 - [Instalação](#instacalao)
 - [Feedback](#feedback)
 - [Autores](#autores)
-- [Lincença](#licenca)
+- [Lincença](#licença)
 
 <!--te-->
 
