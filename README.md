@@ -52,9 +52,9 @@
 
 #### Rotas
 
-- Criamos uma pasta ```routes``` onde teremos para cada rota um arquivo .py para facilitar a organização.
-- Criamos uma pasta ```templates``` onde estará todos os templates (arquivos.html) que utilizamos para renderizar a página html.
-- Criamos uma pasta  ```utils``` ela ficará todas as funções que acharmos necessários para compartilhamento e uso geral do projeto. Ex: criamos a  ```api_url``` para facilitar a chamada da URL base da API que utilizamos.
+- Criamos uma pasta ```/routes``` onde teremos para cada rota um arquivo .py para facilitar a organização.
+- Criamos uma pasta ```/templates``` onde estará todos os templates (arquivos.html) que utilizamos para renderizar a página html.
+- Criamos uma pasta  ```/utils``` ela ficará todas as funções que acharmos necessários para compartilhamento e uso geral do projeto. Ex: criamos a  ```api_url``` para facilitar a chamada da URL base da API que utilizamos.
 
 #### Configuração
 
@@ -62,7 +62,7 @@
 
 #### Template
 
-- Criado o arquivo ```base``` que servirá como base de template dos arquivos em html, nele já temos configurado o bootstrap 5.
+- Criado o arquivo ```base.html``` que servirá como base de template dos arquivos em html, nele já temos configurado o bootstrap 5.
 
 #### API
 
