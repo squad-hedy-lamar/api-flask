@@ -24,9 +24,9 @@
 ```sh
 .
 ├── .routes
-│   ├── characters
-│   ├── episodes
-│   └── locations
+│   ├── characters.py
+│   ├── episodes.py
+│   └── locations.py
 ├── templates
 │   ├── characters
 │   |   |   details.html

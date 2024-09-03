@@ -7,8 +7,3 @@ import routes.characters
 import routes.locations
 
 
-# from utils.config import api_url
-
-# API_URL = api_url()
-
-# print(API_URL)
