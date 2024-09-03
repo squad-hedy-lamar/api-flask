@@ -11,7 +11,7 @@
 - [Instalação](#instacalao)
 - [Feedback](#feedback)
 - [Autores](#autores)
-- [Lincença](#license)
+- [Lincença](#licenca)
 
 <!--te-->
 
@@ -101,7 +101,7 @@ Se você tiver algum comentário, entre em contato conosco em @squad-hedy-lamar 
 
 <!-- Authors -->
 
-## Authors
+## Autores
 
 - [@Daniela2319](https://github.com/Daniela2319)
 - [@emanoelados](https://github.com/emanoelados)
