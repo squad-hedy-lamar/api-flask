@@ -9,10 +9,10 @@ API_URL = api_url()
 @app.route("/characters")
 def get_characters():
   # fazer aqui a chama da API
-  return render_template('/characters/list.html', data={})
+  return render_template('/characters/list.html', active_tab='characters', data={})
 
 
 @app.route("/characters/<id>")
 def get_character(id):
   # fazer aqui a chama da API
-  return render_template('/characters/details.html', data={})
+  return render_template('/characters/details.html', active_tab='characters', data={})

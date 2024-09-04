@@ -17,13 +17,13 @@
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/characters">Personagens</a>
+            <a class="nav-link {% if active_tab == 'characters' %}active{% endif %}" href="/characters">Personagens</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/episodes">Episódios</a>
+              <a class="nav-link {% if active_tab == 'episodes' %}active{% endif %}" href="/episodes">Episódios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/locations">Localizações</a>
+              <a class="nav-link {% if active_tab == 'locations' %}active{% endif %}" href="/locations">Localizações</a>
           </li>
         </ul>
       </div>

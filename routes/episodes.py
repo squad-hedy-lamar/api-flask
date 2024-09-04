@@ -25,7 +25,7 @@ def get_episodes():
   }
     episodes_list.append(episode_info)
   
-  return render_template('/episodes/list.html', data={"episodes": episodes_list})
+  return render_template('/episodes/list.html', active_tab='episodes', data={"episodes": episodes_list})
  
   
 @app.route("/episodes/<id>")
@@ -36,7 +36,7 @@ def get_episode(id):
   episode = response.read().decode("utf-8")
   data = json.loads(episode)
     
-  return render_template('/episodes/details.html', data={"episode": data})
+  return render_template('/episodes/details.html', active_tab='episodes', data={"episode": data})
 
 
 if __name__ == '__main__':

@@ -7,9 +7,15 @@
 
 {% block content %}
 
-<p>ID: {{ data.episode.id }}</p>
-<p>Name: {{ data.episode.name }}</p>
-<p>Air Date: {{ data.episode.air_date }}</p>
-<p>Episode: {{ data.episode.episode }}</p>
+<div class="card border-primary mb-3" style="max-width: 18rem;">
+  <div class="card-header bg-transparent border-primary">
+    #{{ data.episode.id }}
+  </div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">{{ data.episode.name }}</h5>
+    <p class="card-text">{{ data.episode.episode }}.</p>
+  </div>
+  <div class="card-footer bg-transparent border-primary">{{ data.episode.air_date }}</div>
+</div>
 
 {% endblock %}
