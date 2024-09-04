@@ -8,11 +8,11 @@ API_URL = api_url()
 
 @app.route("/locations")
 def get_locations():
-  # fazer aqui a chama da API
+  # fazer aqui a chamada da API
   return render_template('/locations/list.html', active_tab='locations', data={})
 
 
 @app.route("/locations/<id>")
 def get_location(id):
-  # fazer aqui a chama da API
+  # fazer aqui a chamada da API
   return render_template('/locations/details.html', active_tab='locations',  data={})
