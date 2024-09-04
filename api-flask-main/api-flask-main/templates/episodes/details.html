@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Episode Details</title>
+</head>
+<body>
+     <h1>Episode Details</h1>
+{% extends "base.html" %}
+
+{% block title %}Detalhes do Episódio{% endblock %}
+
+{% block header %}Episódio{% endblock %}
+
+{% block content %}
+  <p>ID: {{ data.episode.id }}</p>
+  <p>Name: {{ data.episode.name }}</p>
+  <p>Air Date: {{ data.episode.air_date }}</p>
+  <p>Episode: {{ data.episode.episode }}</p>
+</body>
+</html>
+
+{% endblock %}
