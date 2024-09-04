@@ -86,12 +86,6 @@ Para o consumo dos dados utilizamos a The Rick and Morty API
 > obs: executar os seguintes comandos no terminal (cmd)
 
 ```sh
-#clonar o projeto na sua máquina
-git clone https://github.com/squad-hedy-lamar/api-flask
-
-# entrar na pasta do projeto
-cd api-flask
-
 # Crie um ambiente virtual
 python -m venv .venv
 
