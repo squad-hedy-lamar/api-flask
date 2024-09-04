@@ -7,6 +7,25 @@
 
 {% block content %}
 
-<p>desenvolver aqui a Listagem de Episódios.</p>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Air Date</th>
+      <th>Episode</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for episode in data.episodes %}
+    <tr>
+      <td>{{ episode.id }}</td>
+      <td><a href="/episodes/{{ episode.id }}">{{ episode.name }}</a></td>
+      <td>{{ episode.air_date }}</td>
+      <td>{{ episode.episode }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 
 {% endblock %}
