@@ -102,7 +102,7 @@ pip install -r requirements.txt
 # Rodando o projeto
 # acessar a porta padrão no navegador -> Running on http://127.0.0.1:5000
 # Lembrando que para acessar o projeto ele precisará ficar rodando no seu terminal
-flask --app main run
+flask --app main run --debug
 ```
 
 <!-- Endpoint -->
