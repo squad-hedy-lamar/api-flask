@@ -37,7 +37,7 @@ def get_episode(id):
   data = json.loads(episode)
   
   # Prepare a lista de personagens
-  characters_list = [char_url for char_url in data['characters']]  
+  #characters_list = [char_url for char_url in data['characters']]  
     
   return render_template('/episodes/details.html', active_tab='episodes', data={"episode": data})
 
