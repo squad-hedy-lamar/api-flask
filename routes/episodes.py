@@ -39,10 +39,24 @@ def get_episode(id):
     episode = response.read().decode("utf-8")
     data = json.loads(episode)
 
+    characters_list = getInfoCharacters(data["characters"])
     return render_template(
-        "/episodes/details.html", active_tab="episodes", data={"episode": data}
+        "/episodes/details.html", active_tab="episodes", data={"episode": data, "characters": characters_list}
     )
 
+def getInfoCharacters(characters):
+  characters_list = []
+  for character_url in characters:
+    parts = character_url.split('/')
+    id = parts[-1]
 
-if __name__ == "__main__":
-    app.run(debug=True)
+    character_info = {
+      "id": id,
+      "avatar": f"{API_URL}/character/avatar/{id}.jpeg",
+      "url": character_url,
+    }
+    characters_list.append(character_info)
+
+  return characters_list
+    
+

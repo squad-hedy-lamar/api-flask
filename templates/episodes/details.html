@@ -18,12 +18,15 @@
 </div>
 
 <h2>Personagens:</h2>
-<ul>
-    {% for character_url in data.episode.characters %}
-        <li><a href="{{ character_url }}">{{ character_url }}</a></li>
-    {% endfor %}
-</ul>
-
-<a href="/episodes" class="btn btn-primary">Voltar à lista de episódios</a>
-
+<div class="row row-cols-1 row-cols-md-4 g-4">
+  {% for character in data.characters %}
+  <div class="col">
+      <div class="card">
+          <a href="/characters/{{ character.id }}">
+            <img src="{{ character.avatar }}" class="card-img-top" alt="{{ character.url }}">
+          </a>
+      </div>
+  </div>
+  {% endfor %}
+</div>
 {% endblock %}
