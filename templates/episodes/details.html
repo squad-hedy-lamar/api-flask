@@ -1,4 +1,3 @@
-
 {% extends "base.html" %}
 
 {% block title %}Detalhes do Episódio{% endblock %}
@@ -17,5 +16,14 @@
   </div>
   <div class="card-footer bg-transparent border-primary">{{ data.episode.air_date }}</div>
 </div>
+
+<h2>Personagens:</h2>
+<ul>
+    {% for character_url in data.episode.characters %}
+        <li><a href="{{ character_url }}">{{ character_url }}</a></li>
+    {% endfor %}
+</ul>
+
+<a href="/episodes" class="btn btn-primary">Voltar à lista de episódios</a>
 
 {% endblock %}
