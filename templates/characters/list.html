@@ -1,4 +1,3 @@
-
 {% extends "base.html" %}
 
 {% block title %}Listagem de Personagens{% endblock %}
@@ -7,6 +6,29 @@
 
 {% block content %}
 
-<p>desenvolver aqui a Listagem de Personagens.</p>
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Species</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Origin</th>
+      <th scope="col">Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for character in data.characters %}
+    <tr>
+      <td>{{ character.id }}</td>
+      <td><a href="/characters/{{ character.id }}">{{ character.name }}</a></td>
+      <td>{{ character.species }}</td>
+      <td>{{ character.gender }}</td>
+      <td>{{ character.origin }}</td>
+      <td>{{ character.location }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 
 {% endblock %}

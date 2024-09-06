@@ -1,4 +1,3 @@
-
 {% extends "base.html" %}
 
 {% block title %}Detalhes do Personagem{% endblock %}
@@ -6,7 +5,24 @@
 {% block header %}Personagem{% endblock %}
 
 {% block content %}
+<div class="card border-primary mb-3" style="max-width: 18rem;">
+  <div class="card-header bg-transparent border-primary">
+    #{{ data.character.id }}
+  </div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">{{ data.character.name }}</h5>
+    <p class="card-text">{{ data.character.species }}.</p>
+  </div>
+  <div class="card-footer bg-transparent border-primary">{{ data.episode.air_date }}</div>
+</div>
 
-<p>desenvolver aqui a página de detalhes do Personagem.</p>
+<h2>Personagens:</h2>
+<ul>
+  {% for character_url in data.episode.characters %}
+  <li><a href="{{ character_url }}">{{ character_url }}</a></li>
+  {% endfor %}
+</ul>
+
+<a href="/episodes" class="btn btn-primary">Voltar à lista de episódios</a>
 
 {% endblock %}
