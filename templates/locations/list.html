@@ -1,4 +1,3 @@
-
 {% extends "base.html" %}
 
 {% block title %}Listagem de Localizações{% endblock %}
@@ -17,9 +16,8 @@
       </tr>
     </thead>
     <tbody>
-      {% for location in data.locations %}
+      {% for location in locations %}
       <tr>
-
         <td>{{ location.id }}</td>
         <td><a href="/locations/{{ location.id }}">{{ location.name }}</a></td>
         <td>{{ location.type }}</td>
@@ -27,6 +25,6 @@
       </tr>
       {% endfor %}
     </tbody>
-  </table>
+</table>
 
 {% endblock %}
