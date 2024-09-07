@@ -1,34 +1,29 @@
 {% extends "base.html" %}
 
-{% block title %}Listagem de Personagens{% endblock %}
+{% block title %}Detalhes do Personagem{% endblock %}
 
-{% block header %}Personagens{% endblock %}
+{% block header %}Detalhes do Personagem{% endblock %}
 
 {% block content %}
 
-<table class="table table-bordered border-primary">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Species</th>
-      <th scope="col">Gender</th>
-      <th scope="col">Origin</th>
-      <th scope="col">Location</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for character in data.characters %}
-    <tr>
-      <td>{{ character.id }}</td>
-      <td><a href="/characters/{{ character.id }}">{{ character.name }}</a></td>
-      <td>{{ character.species }}</td>
-      <td>{{ character.gender }}</td>
-      <td>{{ character.origin }}</td>  
-      <td>{{ character.location }}</td> 
-    </tr>
+<div class="card border-primary mb-3" style="max-width: 18rem;">
+  <img src="{{ data.character.image }}" class="card-img-top" alt="{{ data.character.name }}">
+  <div class="card-header bg-transparent border-primary">
+    #{{ data.character.id }}
+  </div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">{{ data.character.name }}</h5>
+    <p class="card-text">Species: {{ data.character.species }}</p>
+    <p class="card-text">Gender: {{ data.character.gender }}</p>
+    <p class="card-text">Origin: {{ data.character.origin }}</p>
+    <p class="card-text">Location: {{ data.character.location }}</p>
+  </div>
+  <div class="card-footer bg-transparent border-primary">Episodes:</div>
+  <ul>
+    {% for episode in characters %}
+    <li><a href="{{ characters }}">{{ episode }}</a></li>
     {% endfor %}
-  </tbody>
-</table>
+  </ul>
+</div>
 
 {% endblock %}
