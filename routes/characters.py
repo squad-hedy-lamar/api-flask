@@ -35,20 +35,19 @@ def get_characters():
             data={"chacters": characters_list},
         )
 
-  characters_list = []
+    characters_list = []
 
-  for character in data['results']:
-    character_info = {
-      "id": character['id'],
-      "name": character['name'],
-      "species": character['species'],
-      "gender": character['gender'],
-      "origin": character['origin'],
-      "location": character['location']
-    }
-    characters_list.append(character_info)
-
-  return render_template('/characters/list.html', active_tab='characters', data={"chacters": characters_list})
+    for character in data['results']:
+      character_info = {
+        "id": character['id'],
+        "name": character['name'],
+        "species": character['species'],
+        "gender": character['gender'],
+        "origin": character['origin'],
+        "location": character['location']
+      }
+      characters_list.append(character_info)
+    return render_template('/characters/list.html', active_tab='characters', data={"chacters": characters_list})
 
 @app.route("/characters/<id>")
 def get_character(id):
