@@ -20,11 +20,8 @@
   </div>
   <div class="card-footer bg-transparent border-primary">Episodes:</div>
   {% for episode in episodes %}
-  <div class="card-footer bg-transparent border-primary">
-    <p class="card-text">{{ episode }}</p>
+ <div class="card-footer bg-transparent border-primary"> {{ episode }}</div>
     {% endfor %}
-
-  </div>
 </div>
 
 {% endblock %}
