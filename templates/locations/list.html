@@ -1,4 +1,3 @@
-
 {% extends "base.html" %}
 
 {% block title %}Listagem de Localizações{% endblock %}
@@ -8,6 +7,26 @@
 {% block content %}
 
 <table class="table table-bordered border-primary">
+<<<<<<< HEAD
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Dimensão</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for location in locations %}
+    <tr>
+      <td>{{ location.id }}</td>
+      <td><a href="/locations/{{ location.id }}">{{ location.name }}</a></td>
+      <td>{{ location.type }}</td>
+      <td>{{ location.dimension }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+=======
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -17,9 +36,8 @@
       </tr>
     </thead>
     <tbody>
-      {% for location in data.locations %}
+      {% for location in locations %}
       <tr>
-
         <td>{{ location.id }}</td>
         <td><a href="/locations/{{ location.id }}">{{ location.name }}</a></td>
         <td>{{ location.type }}</td>
@@ -27,6 +45,7 @@
       </tr>
       {% endfor %}
     </tbody>
-  </table>
+>>>>>>> f65fe9f0e759a3bf3510c92ab47dd926146a7e89
+</table>
 
 {% endblock %}
