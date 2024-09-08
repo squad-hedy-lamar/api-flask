@@ -1,4 +1,3 @@
-
 {% extends "base.html" %}
 
 {% block title %}Detalhes da Localização{% endblock %}
@@ -7,7 +6,16 @@
 
 {% block content %}
 
-<h1> Falta isso aqui <h1>
-<p>desenvolver aqui a página de detalhes da localização.</p>
+<div class="card border-primary mb-3" style="max-width: 18rem;">
+  <div class="card-header bg-transparent border-primary">
+    #{{ location.id }}
+  </div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">{{ location.name }}</h5>
+    <p class="card-text">{{ location.dimension }}.</p>
+    <p class="card-text">{{ location.type }}.</p>
+  </div>
+  <div class="card-footer bg-transparent border-primary">{{ location.name }}</div>
+</div>
 
 {% endblock %}

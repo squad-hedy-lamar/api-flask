@@ -2,27 +2,28 @@
 
 {% block title %}Detalhes do Personagem{% endblock %}
 
-{% block header %}Personagem{% endblock %}
+{% block header %}Detalhes do Personagem{% endblock %}
 
 {% block content %}
+
 <div class="card border-primary mb-3" style="max-width: 18rem;">
+  <img src="{{ data.character.image }}" class="card-img-top" alt="{{ data.character.name }}">
   <div class="card-header bg-transparent border-primary">
     #{{ data.character.id }}
   </div>
   <div class="card-body text-primary">
     <h5 class="card-title">{{ data.character.name }}</h5>
-    <p class="card-text">{{ data.character.species }}.</p>
+    <p class="card-text">Species: {{ data.character.species }}</p>
+    <p class="card-text">Gender: {{ data.character.gender }}</p>
+    <p class="card-text">Origin: {{ data.character.origin }}</p>
+    <p class="card-text">Location: {{ data.character.location }}</p>
   </div>
-  <div class="card-footer bg-transparent border-primary">{{ data.episode.air_date }}</div>
+  <div class="card-footer bg-transparent border-primary">Episodes:</div>
+  <ul>
+    {% for episode in character %}
+    <li><a href="{{ character }}">{{ episode }}</a></li>
+    {% endfor %}
+  </ul>
 </div>
-
-<h2>Personagens:</h2>
-<ul>
-  {% for character_url in data.episode.characters %}
-  <li><a href="{{ character_url }}">{{ character_url }}</a></li>
-  {% endfor %}
-</ul>
-
-<a href="/episodes" class="btn btn-primary">Voltar à lista de episódios</a>
 
 {% endblock %}

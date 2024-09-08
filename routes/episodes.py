@@ -1,5 +1,5 @@
 from main import app
-from flask import render_template, request, jsonify
+from flask import render_template, jsonify
 from utils.config import api_url
 import urllib.request
 import json
@@ -41,22 +41,23 @@ def get_episode(id):
 
     characters_list = getInfoCharacters(data["characters"])
     return render_template(
-        "/episodes/details.html", active_tab="episodes", data={"episode": data, "characters": characters_list}
+        "/episodes/details.html",
+        active_tab="episodes",
+        data={"episode": data, "characters": characters_list},
     )
 
+
 def getInfoCharacters(characters):
-  characters_list = []
-  for character_url in characters:
-    parts = character_url.split('/')
-    id = parts[-1]
+    characters_list = []
+    for character_url in characters:
+        parts = character_url.split("/")
+        id = parts[-1]
 
-    character_info = {
-      "id": id,
-      "avatar": f"{API_URL}/character/avatar/{id}.jpeg",
-      "url": character_url,
-    }
-    characters_list.append(character_info)
+        character_info = {
+            "id": id,
+            "avatar": f"{API_URL}/character/avatar/{id}.jpeg",
+            "url": character_url,
+        }
+        characters_list.append(character_info)
 
-  return characters_list
-    
-
+    return characters_list
