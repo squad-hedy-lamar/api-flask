@@ -16,12 +16,17 @@ def get_locations():
     response = urllib.request.urlopen(url)
     json_data = response.read().decode("utf-8")  # JSON bruto
     data = json.loads(json_data)  # Converter JSON para dicionário Python
+<<<<<<< HEAD
 
     # Passar dados para o template com a chave 'locations'
     return render_template(
         "/locations/list.html", active_tab="locations", locations=data["results"]
     )
+=======
+>>>>>>> f65fe9f0e759a3bf3510c92ab47dd926146a7e89
 
+    # Passar dados para o template com a chave 'locations'
+    return render_template('/locations/list.html', active_tab='locations', locations=data['results'])
 
 @app.route("/locations/<id>")
 def get_location(id):
@@ -30,6 +35,13 @@ def get_location(id):
     response = urllib.request.urlopen(url)
     json_data = response.read().decode("utf-8")  # JSON bruto
     location = json.loads(json_data)  # Converter JSON para dicionário Python
+<<<<<<< HEAD
+=======
+
+    # Passar dados para o template com a chave 'location'
+    return render_template('/locations/details.html', active_tab='locations', location=location)
+
+>>>>>>> f65fe9f0e759a3bf3510c92ab47dd926146a7e89
 
     # Passar dados para o template com a chave 'location'
     return render_template(

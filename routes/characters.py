@@ -10,6 +10,9 @@ API_URL = api_url()
 
 @app.route("/character")
 def get_characters():
+    print(
+        "get_characters function called"
+    )  # Adicione esta linha para verificar se a função é chamada
     # fazer aqui a chamada da API
     url = f"{API_URL}/character"
     response = urllib.request.urlopen(url)
@@ -24,13 +27,14 @@ def get_characters():
             "name": character["name"],
             "species": character["species"],
             "gender": character["gender"],
-            "origin": character["origin"],
-            "location": character["location"],
+            "origin": character["origin"]["name"],
+            "location": character["location"]["name"],
+            "image": character["image"],
         }
         characters_list.append(character_info)
 
         return render_template(
-            "/characters/list.html",
+            "characters/list.html",
             active_tab="characters",
             data={"characters": characters_list},
         )
