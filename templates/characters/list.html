@@ -18,10 +18,10 @@
     </tr>
   </thead>
   <tbody>
-    {% for character in data.characters %}
+    {% for character in data['characters'] %}
     <tr>
       <td>{{ character.id }}</td>
-      <td><a href="/characters/{{ character.id }}">{{ character.name }}</a></td>
+      <td><a href="/character/{{ character.id }}">{{ character.name }}</a></td>
       <td>{{ character.species }}</td>
       <td>{{ character.gender }}</td>
       <td>{{ character.origin }}</td>

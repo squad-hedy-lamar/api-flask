@@ -33,26 +33,8 @@ def get_characters():
         }
         characters_list.append(character_info)
 
-        return render_template(
-            "characters/list.html",
-            active_tab="characters",
-            data={"characters": characters_list},
-        )
-
-    characters_list = []
-
-    for character in data["results"]:
-        character_info = {
-            "id": character["id"],
-            "name": character["name"],
-            "species": character["species"],
-            "gender": character["gender"],
-            "origin": character["origin"],
-            "location": character["location"],
-        }
-        characters_list.append(character_info)
     return render_template(
-        "/characters/list.html",
+        "characters/list.html",
         active_tab="characters",
         data={"characters": characters_list},
     )
@@ -61,7 +43,7 @@ def get_characters():
 @app.route("/character/<id>")
 def get_character(id):
     # fazer aqui a chamada da API
-    url = f"{API_URL}/characters/{id}"
+    url = f"{API_URL}/character/{id}"
     response = urllib.request.urlopen(url)
     character = response.read().decode("utf-8")
     data = json.loads(character)
@@ -70,7 +52,9 @@ def get_character(id):
     episodes_list = [episode_url for episode_url in data["episode"]]
 
     return render_template(
-        "/character/details.html",
+        "/characters/details.html",
         active_tab="characters",
-        data={"character": data, "episodes": episodes_list},
+        character=data,
+        episodes=episodes_list,
+        # data={"character": data, "episodes": episodes_list},
     )

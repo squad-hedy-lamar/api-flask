@@ -7,32 +7,24 @@
 {% block content %}
 
 <div class="card border-primary mb-3" style="max-width: 18rem;">
-  <img src="{{ data.character.image }}" class="card-img-top" alt="{{ data.character.name }}">
+  <img src="{{ character.image }}" class="card-img-top" alt="{{ character.name }}">
   <div class="card-header bg-transparent border-primary">
-    #{{ data.character.id }}
+    #{{ character.id }}
   </div>
   <div class="card-body text-primary">
-    <h5 class="card-title">{{ data.character.name }}</h5>
-    <p class="card-text">Species: {{ data.character.species }}</p>
-    <p class="card-text">Gender: {{ data.character.gender }}</p>
-    <p class="card-text">Origin: {{ data.character.origin }}</p>
-    <p class="card-text">Location: {{ data.character.location }}</p>
+    <h5 class="card-title">{{ character.name }}</h5>
+    <p class="card-text">Species: {{ character.species }}</p>
+    <p class="card-text">Gender: {{ character.gender }}</p>
+    <p class="card-text">Origin: {{ character.origin.name }}</p>
+    <p class="card-text">Location: {{ character.location.name }}</p>
   </div>
   <div class="card-footer bg-transparent border-primary">Episodes:</div>
-  <ul>
-<<<<<<< HEAD
-    {% for episode in character %}
-    <li><a href="{{ character }}">{{ episode }}</a></li>
-=======
-    {% for episode in characters %}
-    <li><a href="{{ characters }}">{{ episode }}</a></li>
->>>>>>> f65fe9f0e759a3bf3510c92ab47dd926146a7e89
+  {% for episode in episodes %}
+  <div class="card-footer bg-transparent border-primary">
+    <p class="card-text">{{ episode }}</p>
     {% endfor %}
-  </ul>
+
+  </div>
 </div>
 
-<<<<<<< HEAD
 {% endblock %}
-=======
-{% endblock %}
->>>>>>> f65fe9f0e759a3bf3510c92ab47dd926146a7e89
