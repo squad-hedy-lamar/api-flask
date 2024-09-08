@@ -7,15 +7,26 @@
 {% block content %}
 
 <div class="card border-primary mb-3" style="max-width: 18rem;">
-  <div class="card-header bg-transparent border-primary">
-    #{{ location.id }}
+    <div class="card-header bg-transparent border-primary">
+      #{{ data.location.id }}
+    </div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">{{ data.location.name }}</h5>
+      <p class="card-text">{{ data.location.dimension }}.</p>
+    </div>
+    <div class="card-footer bg-transparent border-primary">{{ data.location.type }}</div>
   </div>
-  <div class="card-body text-primary">
-    <h5 class="card-title">{{ location.name }}</h5>
-    <p class="card-text">{{ location.dimension }}.</p>
-    <p class="card-text">{{ location.type }}.</p>
+  
+  <h2>Personagens:</h2>
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    {% for character in data.characters %}
+    <div class="col">
+        <div class="card" style="max-width: 200px;">
+            <a href="/characters/{{ character.id }}">
+              <img src="{{ character.avatar }}" class="card-img-top" alt="{{ character.url }}">
+            </a>
+        </div>
+    </div>
+    {% endfor %}
   </div>
-  <div class="card-footer bg-transparent border-primary">{{ location.name }}</div>
-</div>
-
-{% endblock %}
+  {% endblock %}
