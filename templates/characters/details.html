@@ -15,16 +15,10 @@
     <h5 class="card-title">{{ character.name }}</h5>
     <p class="card-text">Species: {{ character.species }}</p>
     <p class="card-text">Gender: {{ character.gender }}</p>
-    <p class="card-text">Origin: {{ character.origin.name }}</p>
-    <p class="card-text">Location: {{ character.location.name }}</p>
+    <p><strong>Origin:</strong> <a href="/locations/{{ character.origin.url.split('/')[-1] }}">{{ character.origin.name
+        }}</a></p>
+    <p><strong>Current Location:</strong> <a href="/locations/{{ character.location.url.split('/')[-1] }}">{{
+        character.location.name }}</a></p>
   </div>
-  <div class="card-footer bg-transparent border-primary">Episodes:</div>
-  {% for episode in episodes %}
-  <div class="card-footer bg-transparent border-primary">
-    <p class="card-text">{{ episode }}</p>
-    {% endfor %}
 
-  </div>
-</div>
-
-{% endblock %}
+  {% endblock %}

@@ -56,5 +56,5 @@ def get_character(id):
         active_tab="characters",
         character=data,
         episodes=episodes_list,
-        # data={"character": data, "episodes": episodes_list},
+        data={"character": data, "episodes": episodes_list},
     )
